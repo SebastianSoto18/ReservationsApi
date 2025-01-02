@@ -1,14 +1,14 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Reservations.Application.User.AuthUser;
 
 namespace Reservations.Api.Controllers;
 
-public class AuthController() : BaseController
+public class AuthController(IMediator mediator) : BaseController
 {
-    
-    [HttpGet]
-    public async Task<ActionResult<string>> Authenticate()
+    [HttpPost]
+    public async Task<ActionResult<string>> Authenticate([FromBody] AuthUserCommand command)
     {
-        return Ok("Hello World");
+        return Ok(await mediator.Send(command));
     }
 }
