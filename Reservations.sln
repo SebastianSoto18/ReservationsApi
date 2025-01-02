@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservations.Api", "Reservations.Api\Reservations.Api.csproj", "{0546646E-F173-4EB2-AD22-2C0B5A645D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservations.Domain", "Reservations.Domain\Reservations.Domain.csproj", "{1ED73F38-7C30-4214-8E98-69F0188F5EE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservations.Application", "Reservations.Application\Reservations.Application.csproj", "{EE07E725-A899-4FE0-B00E-D859BC82187D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservations.Infraestructure", "Reservations.Infraestructure\Reservations.Infraestructure.csproj", "{A94BAC42-9939-4395-B99E-819142E8D695}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0546646E-F173-4EB2-AD22-2C0B5A645D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0546646E-F173-4EB2-AD22-2C0B5A645D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0546646E-F173-4EB2-AD22-2C0B5A645D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0546646E-F173-4EB2-AD22-2C0B5A645D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ED73F38-7C30-4214-8E98-69F0188F5EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ED73F38-7C30-4214-8E98-69F0188F5EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ED73F38-7C30-4214-8E98-69F0188F5EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ED73F38-7C30-4214-8E98-69F0188F5EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE07E725-A899-4FE0-B00E-D859BC82187D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE07E725-A899-4FE0-B00E-D859BC82187D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE07E725-A899-4FE0-B00E-D859BC82187D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE07E725-A899-4FE0-B00E-D859BC82187D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A94BAC42-9939-4395-B99E-819142E8D695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A94BAC42-9939-4395-B99E-819142E8D695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A94BAC42-9939-4395-B99E-819142E8D695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A94BAC42-9939-4395-B99E-819142E8D695}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
