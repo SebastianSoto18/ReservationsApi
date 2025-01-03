@@ -19,4 +19,23 @@ public class Reservation
     
     public virtual User User { get; set; } = null!;
     public virtual Place Place { get; set; } = null!;
+    
+    
+    public bool ReservationCrossing (Reservation registeredReservation)
+    {
+        if (registeredReservation.ReservationDate.Date != ReservationDate.Date)
+        {
+            return false;
+        }
+
+        return FoundCrossingOfHours(registeredReservation);
+    }
+
+    private bool FoundCrossingOfHours(Reservation registered)
+    {
+        return (CheckInHour > registered.CheckInHour && registered.CheckOutHour > CheckInHour && registered.CheckOutHour <= CheckOutHour)
+               || (CheckInHour <= registered.CheckInHour && registered.CheckOutHour >= CheckInHour && registered.CheckOutHour <= CheckOutHour)
+               || (CheckOutHour <= registered.CheckOutHour && registered.CheckInHour >= CheckInHour && registered.CheckInHour < CheckOutHour)
+               || (CheckInHour >= registered.CheckInHour && CheckOutHour <= registered.CheckOutHour);
+    }
 }

@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Globalization;
+using System.Security.Claims;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -26,11 +27,22 @@ public static class Extensions
     {
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IReservationRepository, ReservationRepository>();
+        services.AddScoped<IPlaceRepository, PlaceRepository>();
     }
     
     public static void AddServices(this IServiceCollection services)
     {
         services.AddScoped<IEncryptService, EncryptService>();
         services.AddScoped<ITokenService, TokenService>();
+    }
+    
+    public static DateTime ParseDate(this string date, string? format = null)
+    {
+        return DateTime.ParseExact(date, format ?? "dd/MM/yyyy", CultureInfo.InvariantCulture);
+    }
+
+    public static TimeSpan ParseHour(this string hour)
+    {
+        return TimeSpan.Parse(hour, CultureInfo.InvariantCulture);
     }
 }
