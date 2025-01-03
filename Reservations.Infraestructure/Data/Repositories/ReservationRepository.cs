@@ -15,4 +15,28 @@ public class ReservationRepository(ApplicationDbContext context) : IReservationR
                         (reservationDate == null || r.ReservationDate == reservationDate))
             .ToListAsync(cancellationToken);
     }
+
+    public async Task<IReadOnlyCollection<Reservation>> GetReservationsByPlaceAsync(long placeId, CancellationToken cancellationToken)
+    {
+        return await context.Reservations
+            .Where(r => r.PlaceId == placeId)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyCollection<Reservation>> GetReservationsByUserIdAsync(long userId, CancellationToken cancellationToken)
+    {
+        return await context.Reservations
+            .Where(r => r.UserId == userId)
+            .ToListAsync(cancellationToken);
+    }
+
+    public void Delete(Reservation reservation)
+    {
+        context.Reservations.Remove(reservation);
+    }
+
+    public async Task SaveChangesAsync(CancellationToken cancellationToken)
+    {
+        await context.SaveChangesAsync(cancellationToken);
+    }
 }

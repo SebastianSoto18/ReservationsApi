@@ -16,4 +16,14 @@ public class PlaceRepository(ApplicationDbContext context) : IPlaceRepository
                 || (r.CheckInHour >= checkInHour && r.CheckOutHour <=checkOutHour))))
             .ToListAsync(cancellationToken);
     }
+
+    public Task<Place?> GetByIdAsync(long id, CancellationToken cancellationToken)
+    {
+        return context.Places.FirstOrDefaultAsync(p => p.PlaceId == id, cancellationToken);
+    }
+
+    public async Task SaveChangesAsync(CancellationToken cancellationToken)
+    {
+        await context.SaveChangesAsync(cancellationToken); 
+    }
 }
