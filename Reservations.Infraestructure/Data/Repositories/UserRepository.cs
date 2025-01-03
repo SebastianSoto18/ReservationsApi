@@ -6,10 +6,13 @@ namespace Reservations.Infraestructure.Data.Repositories;
 
 public class UserRepository(ApplicationDbContext context) : IUserRepository
 {
-    private readonly ApplicationDbContext _context = context;
-    
     public Task<User?> GetByEmailAsync(string email)
     {
-        return _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        return context.Users.FirstOrDefaultAsync(u => u.Email == email);
+    }
+
+    public Task<User?> GetByIdAsync(long id)
+    {
+       return context.Users.FirstOrDefaultAsync(u => u.UserId == id);
     }
 }
